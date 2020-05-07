@@ -1,0 +1,27 @@
+Opening terminal
+Opening middle with child
+Opening top with child
+Some work
+Closing top, onto child
+Closing middle, onto child
+Closing terminal, end of chain
+========
+Opening terminal
+Opening middle with child
+Opening top with child
+Some work
+Closing top, onto child
+Closing middle, onto child
+Closing terminal, end of chain
+Closing middle, onto child
+Closing terminal, end of chain
+Closing terminal, end of chain
+========
+Opening terminal
+Opening middle with child
+Caught the IOException!
+========
+Opening terminal
+Opening middle with child
+Closing terminal, end of chain
+Caught the IOException!
