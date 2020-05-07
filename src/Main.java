@@ -13,21 +13,21 @@ public class Main {
     }
 
     private static void implicitChain() {
-        try (final WellBehavedResource topResource = new WellBehavedResource("top", new WellBehavedResource("middle", new WellBehavedResource("terminal")))) {
+        try (final var topResource = new WellBehavedResource("top", new WellBehavedResource("middle", new WellBehavedResource("terminal")))) {
             System.out.println("Some work");
         }
     }
 
     private static void explicitChain() {
-        try (final WellBehavedResource terminalResource = new WellBehavedResource("terminal");
-             final WellBehavedResource middleResource = new WellBehavedResource("middle", terminalResource);
-             final WellBehavedResource topResource = new WellBehavedResource("top", middleResource)) {
+        try (final var terminalResource = new WellBehavedResource("terminal");
+             final var middleResource = new WellBehavedResource("middle", terminalResource);
+             final var topResource = new WellBehavedResource("top", middleResource)) {
             System.out.println("Some work");
         }
     }
 
     private static void errorInImplicitChain() {
-        try (final WellBehavedResource topResource = new WellBehavedResource("top", new TroublesomeResource("middle", new WellBehavedResource("terminal")))) {
+        try (final var topResource = new WellBehavedResource("top", new TroublesomeResource("middle", new WellBehavedResource("terminal")))) {
             System.out.println("Some work");
         } catch (IOException e) {
             System.out.println("Caught the IOException!");
@@ -35,9 +35,9 @@ public class Main {
     }
 
     private static void errorInExplicitChain() {
-        try (final WellBehavedResource terminalResource = new WellBehavedResource("terminal");
-             final TroublesomeResource middleResource = new TroublesomeResource("middle", terminalResource);
-             final WellBehavedResource topResource = new WellBehavedResource("top", middleResource)) {
+        try (final var terminalResource = new WellBehavedResource("terminal");
+             final var middleResource = new TroublesomeResource("middle", terminalResource);
+             final var topResource = new WellBehavedResource("top", middleResource)) {
             System.out.println("Some work");
         } catch (IOException e) {
             System.out.println("Caught the IOException!");
